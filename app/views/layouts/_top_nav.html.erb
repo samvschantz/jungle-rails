@@ -36,10 +36,10 @@
         <li>
           <%= link_to 'Logout', :logout %>
         </li>
-        <% end %>
         <li>
-          <%= session[:user_id] %>
+          <span>Hello <%= current_user.name %></span>
         </li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">
