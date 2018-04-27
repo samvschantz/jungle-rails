@@ -41,7 +41,12 @@ cat1.products.create!({
   image: open_asset('apparel1.jpg'),
   quantity: 10,
   price: 64.99
-})
+}).reviews.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "This shirt is so classy I love it",
+  rating: 5,
+  })
 
 cat1.products.create!({
   name:  'Women\'s Zebra pants',
@@ -49,7 +54,12 @@ cat1.products.create!({
   image: open_asset('apparel2.jpg'),
   quantity: 18,
   price: 124.99
-})
+}).reviews.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "Effectively camouflaged amongst a herd on the African Savanna",
+  rating: 4,
+  })
 
 cat1.products.create!({
   name:  'Hipster Hat',
@@ -130,7 +140,12 @@ cat3.products.create!({
   image: open_asset('furniture3.jpg'),
   quantity: 0,
   price: 2_483.75
-})
+}).reviews.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "Too Red",
+  rating: 1,
+  })
 
 
 puts "DONE!"

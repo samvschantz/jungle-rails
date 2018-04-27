@@ -26,6 +26,27 @@
       </div>
     </div>
 
+    <% if current_user %>
+      <%= form_for [@product, @review] do |f| %>
+        <%= f.text_area :description %>
+        <%= f.select :rating, [[5,5],[4,4],[3,3],[2,2],[1,1]] %>
+            <%= submit_tag "Submit" %>
+      <% end %>
+    <% end %>
+
+    <% i = 0 %>
+
+    <% @product.reviews.each do |r| %>
+      <div><strong>Rating:</strong> <%= @product.reviews[i].rating %></div>
+      <div><strong>Review:</strong> <%= @product.reviews[i].description %></div>
+      <% if current_user && if current_user.id == @product.reviews[i].user_id %>
+          <div>delete</div>
+        <% else %>
+      <% end %>
+      <% end %>
+      <% i += 1 %>
+    <% end %>
+
   </article>
 
 </section>
