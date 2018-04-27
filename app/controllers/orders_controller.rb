@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      UserMailer.welcome_email(order).deliver_later
+      UserMailer.order_email(order).deliver_later
       redirect_to order
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
