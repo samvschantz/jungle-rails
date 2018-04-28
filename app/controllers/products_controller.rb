@@ -9,4 +9,8 @@ class ProductsController < ApplicationController
     @review = Review.new
   end
 
+  def delete
+    review.delete
+  end
+
 end
