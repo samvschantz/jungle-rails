@@ -47,6 +47,7 @@ RSpec.describe User, type: :model do
       expect(user.errors.messages).to include({:name=>["can't be blank"]})
     end
 
+    #must use create because users will have to be saved in database to accurately test
     it "requires a unique email" do
       user1 = User.create(
         name: "Sam",
@@ -62,5 +63,17 @@ RSpec.describe User, type: :model do
         )
       expect(user2.errors.messages).to include({:email=>["has already been taken"]})
     end
+
+      it "requires a password over 6 characters in length" do
+      user = User.new(
+        name: "Sam",
+        email: "samvschantz@gmail.com",
+        password: "pswrd",
+        password_confirmation: "pswrd"
+        )
+      user.valid?
+      expect(user.errors.messages).to include({:password=>["is too short (minimum is 6 characters)"]})
+    end
+
   end
 end
