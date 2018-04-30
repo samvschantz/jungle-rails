@@ -47,6 +47,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
 
+group :test do
+  gem "nyan-cat-formatter"
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

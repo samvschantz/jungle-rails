@@ -103,6 +103,8 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    nyan-cat-formatter (0.12.0)
+      rspec (>= 2.99, >= 2.14.2, < 4)
     pg (0.18.4)
     pkg-config (1.1.7)
     puma (3.5.2)
@@ -148,6 +150,10 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rmagick (2.15.4)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -219,6 +225,7 @@ DEPENDENCIES
   jquery-rails
   money-rails
   newrelic_rpm
+  nyan-cat-formatter
   pg
   puma
   quiet_assets
