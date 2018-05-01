@@ -49,6 +49,9 @@ end
 
 group :test do
   gem "nyan-cat-formatter"
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do
