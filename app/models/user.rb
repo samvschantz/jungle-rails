@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
   validates :name, presence: { on: :create }
 
 
-  def self.authenticate(email, password)
-    @user = User.find_by_email(email)
-    if user && user.match_password(password)
-      return @user
+  def self.authenticate_with_credentials(email, password)
+    user = User.find_by_email(email)
+    if user && user.authenticate(password)
+      return user
     else
       return nil
     end
+  end
 end
